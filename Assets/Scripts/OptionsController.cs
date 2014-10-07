@@ -16,6 +16,7 @@ public class OptionsController : MonoBehaviour {
     private Text textEasy;
     private Text textNormal;
     private Text textHard;
+    private Lang lang;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,8 @@ public class OptionsController : MonoBehaviour {
         textEasy   = GameObject.Find ("TextEasy")  .GetComponent<Text> ();
         textNormal = GameObject.Find ("TextNormal").GetComponent<Text> ();
         textHard   = GameObject.Find ("TextHard")  .GetComponent<Text> ();
+
+        lang = GameObject.Find ("Lang").GetComponent<Lang> ();
     }
 	
 	// Update is called once per frame
@@ -72,5 +75,15 @@ public class OptionsController : MonoBehaviour {
     {
         g.SaveDifficulty ();
         Application.LoadLevel ("TittleScene");
+    }
+
+    public void Spanish()
+    {
+        lang.SetLanguage ("es");
+    }
+
+    public void English()
+    {
+        lang.SetLanguage ("en");
     }
 }
