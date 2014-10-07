@@ -67,6 +67,6 @@ public class CreditsController : MonoBehaviour {
         if (GUI.Button (new Rect (5, Screen.height - buttonHeight * 1 - 5, (Screen.width - 10)/2, buttonHeight), "Apache 2.0 License"))
             display = apache;
         if (GUI.Button (new Rect (Screen.width/2, Screen.height - buttonHeight - 5, (Screen.width - 10)/2, buttonHeight), "Exit"))
-            Application.LoadLevel ("MainScene");
+            Application.LoadLevel ("TittleScene");
     }
 }
