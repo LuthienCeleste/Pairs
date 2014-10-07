@@ -70,6 +70,7 @@ public class OptionsController : MonoBehaviour {
 
     public void Back()
     {
+        g.SaveDifficulty ();
         Application.LoadLevel ("TittleScene");
     }
 }

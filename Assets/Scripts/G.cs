@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class G : MonoBehaviour {
 	private int level;
@@ -11,7 +12,7 @@ public class G : MonoBehaviour {
 		ResetLevel();
 		icons = Resources.LoadAll<Sprite> ("Icons");
 		Debug.Log ("Loaded " + icons.Length + " icons");
-        difficulty = Difficulty.Normal;
+        LoadDifficulty ();
 	}
 
 	public Sprite[] getIcons()
@@ -42,5 +43,21 @@ public class G : MonoBehaviour {
     public Difficulty getDifficulty()
     {
         return difficulty;
+    }
+
+    private void LoadDifficulty()
+    {
+        if (PlayerPrefs.HasKey ("Difficulty")) {
+            difficulty = (Difficulty) Enum.Parse(typeof(Difficulty),
+                                    PlayerPrefs.GetString("Difficulty") );
+        }
+        else
+            difficulty = Difficulty.Normal;
+    }
+
+    public void SaveDifficulty()
+    {
+        PlayerPrefs.SetString ("Difficulty", difficulty.ToString ());
+        PlayerPrefs.Save ();
     }
 }
