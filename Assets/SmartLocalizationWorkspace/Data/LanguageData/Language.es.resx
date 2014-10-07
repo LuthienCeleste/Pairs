@@ -119,6 +119,9 @@
 	<data name="BACK" xml:space="preserve">
 		<value>VOLVER</value>
 	</data>
+	<data name="Completed up to" xml:space="preserve">
+		<value>Completado hasta el</value>
+	</data>
 	<data name="CREDITS" xml:space="preserve">
 		<value>CREDITOS</value>
 	</data>
@@ -128,8 +131,14 @@
 	<data name="EXIT" xml:space="preserve">
 		<value>SALIR</value>
 	</data>
+	<data name="GAME" xml:space="preserve">
+		<value>FIN DEL</value>
+	</data>
 	<data name="Hard" xml:space="preserve">
 		<value>Difícil</value>
+	</data>
+	<data name="LEVEL" xml:space="preserve">
+		<value>NIVEL</value>
 	</data>
 	<data name="No Time" xml:space="preserve">
 		<value>Sin Tiempo</value>
@@ -139,6 +148,9 @@
 	</data>
 	<data name="OPTIONS" xml:space="preserve">
 		<value>OPCIONES</value>
+	</data>
+	<data name="OVER" xml:space="preserve">
+		<value>JUEGO</value>
 	</data>
 	<data name="PLAY" xml:space="preserve">
 		<value>JUGAR</value>
