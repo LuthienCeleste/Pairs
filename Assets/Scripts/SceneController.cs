@@ -51,4 +51,9 @@ public class SceneController : MonoBehaviour {
     {
         Application.LoadLevel ("OptionsScene");
     }
+
+    public void Exit()
+    {
+        Application.Quit ();
+    }
 }
