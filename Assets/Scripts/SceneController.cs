@@ -19,7 +19,7 @@ public class SceneController : MonoBehaviour {
 
     void OnGUI()
     {
-        int buttonHeight = (int) (Screen.height * .1f);
+/*        int buttonHeight = (int) (Screen.height * .1f);
         int buttonWidth = (int)(Screen.width * .5f);
         int buttonX = (int)(Screen.width * .25f);
         int buttonY = (int)(Screen.height * .8f);
@@ -34,6 +34,17 @@ public class SceneController : MonoBehaviour {
             g.ResetLevel();
             Application.LoadLevel ("GameScene");    
         }
+*/    }
+
+    public void Credits()
+    {
+        Application.LoadLevel ("CreditsScene");
+    }
+
+    public void Play()
+    {
+        g.ResetLevel();
+        Application.LoadLevel ("GameScene");    
     }
 
 }

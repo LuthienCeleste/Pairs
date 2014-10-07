@@ -15,7 +15,7 @@ public class GameOverController : MonoBehaviour {
     void Update () {
         elapsedTime += Time.deltaTime;
         if ( Input.GetButtonUp("Fire1") && elapsedTime > minimumScreenDuration )
-            Application.LoadLevel ("MainScene");
+            Application.LoadLevel ("TittleScene");
     }
     
 

@@ -10,7 +10,7 @@ public class Loader : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Application.LoadLevel ("MainScene");
+        Application.LoadLevel ("TittleScene");
 	
 	}
 }
