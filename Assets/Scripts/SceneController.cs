@@ -47,4 +47,8 @@ public class SceneController : MonoBehaviour {
         Application.LoadLevel ("GameScene");    
     }
 
+    public void Options()
+    {
+        Application.LoadLevel ("OptionsScene");
+    }
 }

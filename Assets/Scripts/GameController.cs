@@ -25,9 +25,33 @@ public class GameController : MonoBehaviour
         quitDialog = GameObject.Find ("QuitDialog");
         quitDialog.gameObject.SetActive (false);
         SetupLevel ();
-        maxTime = 1f + 2 * g.getLevel ();
-        remainingTime = maxTime;
+        CalculateMaxTime ();
         isQuitScreenShowing = false;
+    }
+
+    private void CalculateMaxTime()
+    {
+        switch (g.getDifficulty ()) {
+        case Difficulty.NoTime :
+            maxTime = -1000f;
+            remainingTime = -1000f;
+            break;
+        case Difficulty.Easy :
+            maxTime = 1f + 2 * g.getLevel () * 
+                Mathf.Max( 1f , Mathf.Log ( g.getLevel(), 2f ) );
+            remainingTime = maxTime;
+            break;
+        case Difficulty.Normal :
+            maxTime = 1f + 2 * g.getLevel () * 
+                Mathf.Max( 1f , Mathf.Log ( g.getLevel(), 4f ) );
+            remainingTime = maxTime;
+            break;
+        case Difficulty.Hard :
+            maxTime = 1f + 2 * g.getLevel () * 
+                Mathf.Max( 1f , Mathf.Log ( g.getLevel(), 6f ) );
+            remainingTime = maxTime;
+            break;
+        }
     }
 
     // Update is called once per frame
@@ -212,7 +236,7 @@ public class GameController : MonoBehaviour
         selectedTile = null;
         UpdateWhiteIconPosition ();
 
-        remainingTime += extraTimePerMatching * ( ( .5f * activeTiles / maxTiles ) + .5f );
+        remainingTime += extraTimePerMatching * ( ( .3f * activeTiles / maxTiles ) + .7f );
 
         if (activeTiles <= 0) {
             g.getNextLevel();
@@ -249,6 +273,13 @@ public class GameController : MonoBehaviour
 
     private void UpdateTime()
     {
+        if (g.getDifficulty()==Difficulty.NoTime )
+        {
+            timeBar.renderer.enabled = false;
+            return;
+        }
+
+        timeBar.renderer.enabled = true;
         remainingTime -= Time.deltaTime;
 
         if (remainingTime <= 0f) {

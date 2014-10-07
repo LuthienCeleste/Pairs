@@ -11,6 +11,7 @@ public class G : MonoBehaviour {
 		ResetLevel();
 		icons = Resources.LoadAll<Sprite> ("Icons");
 		Debug.Log ("Loaded " + icons.Length + " icons");
+        difficulty = Difficulty.Normal;
 	}
 
 	public Sprite[] getIcons()
@@ -32,6 +33,14 @@ public class G : MonoBehaviour {
 			return level;
 	}
 
+    private Difficulty difficulty;
+    public void SetDifficulty( Difficulty difficulty )
+    {
+        this.difficulty = difficulty;
+    }
 
-	
+    public Difficulty getDifficulty()
+    {
+        return difficulty;
+    }
 }
