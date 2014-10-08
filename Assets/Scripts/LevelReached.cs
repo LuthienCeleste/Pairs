@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class LevelReached : MonoBehaviour {
@@ -6,10 +7,10 @@ public class LevelReached : MonoBehaviour {
     // Use this for initialization
 	void Start () {
         G g = GameObject.Find ("G").GetComponent<G> ();
-        GameObject text = GameObject.Find ("GUI Text Level XX");
+        Text text = GameObject.Find ("TextLevelX").GetComponent<Text> ();
         Lang lang = GameObject.Find ("Lang").GetComponent<Lang> ();
 
-        text.guiText.text = lang.get ("LEVEL") + " " + (g.getLevel () - 1);	
+        text.text = lang.get ("LEVEL") + " " + (g.getLevel () - 1);	
 	}
 	
 }
