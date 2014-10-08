@@ -8,7 +8,7 @@ public class Lang : MonoBehaviour {
 	void Start () {
         DontDestroyOnLoad (this);
         languageManager = LanguageManager.Instance;
-        languageManager.ChangeLanguage ("en");
+        LoadLang ();
 	}
 
     public string get( string key )
@@ -21,6 +21,7 @@ public class Lang : MonoBehaviour {
     public void SetLanguage( string lang )
     {
         languageManager.ChangeLanguage (lang);
+        SaveLang (lang);
     }
 
     public void addOnChangeListener( ChangeLanguageEventHandler callback )
@@ -32,6 +33,27 @@ public class Lang : MonoBehaviour {
     {
         languageManager.OnChangeLanguage -= callback;
     }
+
+    private void LoadLang()
+    {
+        string lang;
+        if (PlayerPrefs.HasKey ("Language")) {
+            lang = PlayerPrefs.GetString ("Language");
+            Debug.Log ("loaded lang " + lang);
+        } else {
+            lang = "en";
+            Debug.Log ("defaulted lang " + lang);
+        }
+        languageManager.ChangeLanguage (lang);
+    }
+    
+    public void SaveLang(string lang)
+    {
+        Debug.Log ("saving lang " + lang);
+        PlayerPrefs.SetString ("Language", lang);
+        PlayerPrefs.Save ();
+    }
+
 }
 
 
