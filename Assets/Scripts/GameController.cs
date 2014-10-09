@@ -238,9 +238,17 @@ public class GameController : MonoBehaviour
 
         remainingTime += extraTimePerMatching * ( ( .3f * activeTiles / maxTiles ) + .7f );
 
+        CheckEndOfLevel ();
+    }
+
+    void CheckEndOfLevel()
+    {
         if (activeTiles <= 0) {
-            g.getNextLevel();
-            Application.LoadLevel("GameScene");
+            g.getNextLevel ();
+            if ( g.getLevel()>20 )
+                Application.LoadLevel("GameOverScene");
+            else
+                Application.LoadLevel ("GameScene");
         }
     }
 
