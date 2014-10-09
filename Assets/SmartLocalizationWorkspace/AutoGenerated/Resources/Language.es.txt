@@ -125,6 +125,9 @@
 	<data name="CREDITS" xml:space="preserve">
 		<value>CREDITOS</value>
 	</data>
+	<data name="DIFFICULTY" xml:space="preserve">
+		<value>DIFICULTAD</value>
+	</data>
 	<data name="Easy" xml:space="preserve">
 		<value>Fácil</value>
 	</data>
