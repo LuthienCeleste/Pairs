@@ -122,6 +122,9 @@
 	<data name="Completed up to" xml:space="preserve">
 		<value>Completado hasta el</value>
 	</data>
+	<data name="Continue" xml:space="preserve">
+		<value>Continuar</value>
+	</data>
 	<data name="CREDITS" xml:space="preserve">
 		<value>CREDITOS</value>
 	</data>
@@ -157,5 +160,8 @@
 	</data>
 	<data name="PLAY" xml:space="preserve">
 		<value>JUGAR</value>
+	</data>
+	<data name="Quit" xml:space="preserve">
+		<value>Salir</value>
 	</data>
 </root>
